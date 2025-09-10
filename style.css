@@ -1,0 +1,167 @@
+:root{
+  --bg:#f8fafc;
+  --fg:#0f172a;
+  --muted:#475569;
+  --border:#cbd5e1;
+  --noun:#16a34a;
+  --verb:#2563eb;
+  --particle:#7c3aed;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%; margin:0;}
+body{
+  background:var(--bg);
+  color:var(--fg);
+  font:16px/1.45 system-ui, Segoe UI, Roboto, Arial, "Noto Naskh Arabic", "Amiri", sans-serif;
+}
+
+header{
+  display:flex;
+  gap:16px;
+  align-items:center;
+  padding:12px 16px;
+  border-bottom:1px solid var(--border);
+  background:#fff;
+}
+h1{font-size:18px; margin:0}
+.legend{
+  display:flex;
+  gap:16px;
+  align-items:center;
+  color:var(--muted);
+  font-size:14px;
+}
+.legend .dot{
+  display:inline-block;
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  margin-inline-end:6px;
+  vertical-align:middle;
+}
+.legend .noun{background:var(--noun)}
+.legend .verb{background:var(--verb)}
+.legend .particle{background:var(--particle)}
+
+.controls{margin-left:auto}
+.file-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:6px 10px;
+  background:#eef2f7;
+  border:1px solid var(--border);
+  border-radius:8px;
+  cursor:pointer;
+  font-size:14px;
+  color:#0f172a;
+}
+.file-btn input{display:none}
+
+#diagram-container{
+  position:relative;
+  height:calc(100vh - 58px);
+  overflow:auto;
+  background:conic-gradient(from 90deg at 1px 1px,#0000 90deg,#eef2f7 0) 0 0/24px 24px;
+}
+
+#connectors{
+  position:absolute;
+  inset:0;
+  z-index:2;
+  pointer-events:none;
+}
+
+#nodes{
+  position:absolute;
+  inset:0;
+  z-index:3; /* on top of connectors */
+}
+
+.node{
+  position:absolute;
+  min-width:140px;
+  max-width:260px;
+  padding:8px 10px;
+  background:#fff;
+  border:2px solid var(--border);
+  border-radius:10px;
+  box-shadow:0 2px 8px rgba(15,23,42,.06);
+  cursor:pointer;
+  transition:transform .15s,box-shadow .15s,border-color .15s, opacity .15s;
+  text-align:center;
+  user-select:none;
+}
+.node .ar{
+  display:block;
+  font-weight:600;
+  font-size:15px;
+}
+.node .en{
+  display:block;
+  color:var(--muted);
+  font-size:12px;
+  margin-top:2px;
+}
+
+.node[data-group="noun"]{border-color:var(--noun)}
+.node[data-group="verb"]{border-color:var(--verb)}
+.node[data-group="particle"]{border-color:var(--particle)}
+
+.node:hover{
+  transform:translateY(-1px);
+  box-shadow:0 6px 14px rgba(15,23,42,.12);
+}
+
+.hidden{display:none}
+
+aside#info-panel{
+  position:fixed;
+  top:0;
+  right:0;
+  width:340px;
+  height:100vh;
+  background:#fff;
+  border-left:1px solid var(--border);
+  padding:16px;
+  overflow:auto;
+  box-shadow:-8px 0 24px rgba(15,23,42,.08);
+  z-index:10;
+}
+#close-info{
+  position:absolute;
+  top:8px;
+  left:8px;
+  width:28px;
+  height:28px;
+  border:none;
+  background:#f1f5f9;
+  border-radius:6px;
+  cursor:pointer;
+  font-size:18px;
+}
+#info-content h2{
+  margin-top:28px;
+  margin-bottom:8px;
+  font-size:18px;
+}
+#info-content p{
+  margin:0 0 10px;
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* connectors (works for polyline) */
+.connector {
+  fill:none;
+  stroke-width:2.2;
+  vector-effect:non-scaling-stroke;
+  stroke-linejoin:round;
+}
+.connector.noun     { stroke:var(--noun); }
+.connector.verb     { stroke:var(--verb); }
+.connector.particle { stroke:var(--particle); }
+
+.node.active{outline:3px solid #facc15; outline-offset:2px}
+.dimmed{opacity:.18}

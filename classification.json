@@ -1,0 +1,97 @@
+[
+  {
+    "id": "root",
+    "labelAr": "الكلمة",
+    "labelEn": "Word",
+    "group": "root",
+    "x": 800,
+    "y": 60,
+    "children": ["noun", "verb", "particle"],
+    "infoAr": "تعريف عام",
+    "infoEn": "General definition"
+  },
+  {
+    "id": "noun",
+    "parent": "root",
+    "labelAr": "اسم",
+    "labelEn": "Noun",
+    "group": "noun",
+    "x": 420,
+    "y": 240,
+    "children": ["proper", "common"],
+    "infoAr": "",
+    "infoEn": ""
+  },
+  {
+    "id": "verb",
+    "parent": "root",
+    "labelAr": "فعل",
+    "labelEn": "Verb",
+    "group": "verb",
+    "x": 800,
+    "y": 240,
+    "children": [],
+    "infoAr": "",
+    "infoEn": ""
+  },
+  {
+    "id": "particle",
+    "parent": "root",
+    "labelAr": "حرف",
+    "labelEn": "Particle",
+    "group": "particle",
+    "x": 1180,
+    "y": 240,
+    "children": ["linking", "emphasis"],
+    "infoAr": "",
+    "infoEn": ""
+  },
+  {
+    "id": "proper",
+    "parent": "noun",
+    "labelAr": "علم",
+    "labelEn": "Proper",
+    "group": "noun",
+    "x": 300,
+    "y": 420,
+    "children": [],
+    "infoAr": "",
+    "infoEn": ""
+  },
+  {
+    "id": "common",
+    "parent": "noun",
+    "labelAr": "نكرة",
+    "labelEn": "Common",
+    "group": "noun",
+    "x": 540,
+    "y": 420,
+    "children": [],
+    "infoAr": "",
+    "infoEn": ""
+  },
+  {
+    "id": "linking",
+    "parent": "particle",
+    "labelAr": "ربط",
+    "labelEn": "Linking",
+    "group": "particle",
+    "x": 1100,
+    "y": 420,
+    "children": [],
+    "infoAr": "",
+    "infoEn": ""
+  },
+  {
+    "id": "emphasis",
+    "parent": "particle",
+    "labelAr": "توكيد",
+    "labelEn": "Emphasis",
+    "group": "particle",
+    "x": 1260,
+    "y": 420,
+    "children": [],
+    "infoAr": "",
+    "infoEn": ""
+  }
+]

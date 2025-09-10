@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Arabic classification — fixed layout</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Arabic classification — fixed layout</h1>
+    <div class="legend">
+      <span><span class="dot noun"></span>اسم Noun</span>
+      <span><span class="dot verb"></span>فعل Verb</span>
+      <span><span class="dot particle"></span>حرف Particle</span>
+    </div>
+    <div class="controls">
+      <label class="file-btn">
+        <input id="file-input" type="file" accept=".json" />
+        Load JSON
+      </label>
+    </div>
+  </header>
+
+  <div id="diagram-container">
+    <svg id="connectors"></svg>
+    <div id="nodes"></div>
+  </div>
+
+  <aside id="info-panel" class="hidden" aria-label="Info">
+    <button id="close-info" title="Close">×</button>
+    <div id="info-content"></div>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>
